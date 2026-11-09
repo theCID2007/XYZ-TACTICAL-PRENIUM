@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="XYZ TACTICAL — boutique de vêtements et équipements outdoor.">
+  <title>XYZ TACTICAL | Boutique outdoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">ÉQUIPEMENTS OUTDOOR · STYLE · PROTECTION · AVENTURE</div>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-mark">X</span><span>XYZ <b>TACTICAL</b><small>OUTDOOR EQUIPMENT</small></span></a>
+    <nav><a href="#catalogue">Catalogue</a><a href="#about">À propos</a><a href="#contact">Contact</a></nav>
+    <button class="cart-trigger" id="open-cart" aria-label="Ouvrir le panier">PANIER <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">ÉQUIPEZ-VOUS POUR L'AVENTURE</p>
+        <h1>PRÊT POUR<br><em>CHAQUE TERRAIN.</em></h1>
+        <p class="hero-copy">Découvrez une sélection de vêtements, accessoires et équipements dédiés aux activités outdoor.</p>
+        <a class="button button-light" href="#catalogue">EXPLORER LA COLLECTION <span>↗</span></a>
+      </div>
+      <div class="hero-stamp"><span>XYZ</span><small>TACTICAL<br>COLLECTION</small></div>
+    </section>
+
+    <section class="newsletter" id="contact">
+      <div><p class="eyebrow">RESTONS EN CONTACT</p><h2>Recevez nos nouveautés.</h2><p>Inscrivez votre adresse e-mail pour recevoir les actualités de la boutique.</p></div>
+      <form id="email-form"><input id="email-input" type="email" placeholder="Votre adresse e-mail" required><button class="button button-dark">S'INSCRIRE</button></form>
+      <p class="form-feedback" id="email-feedback" aria-live="polite"></p>
+    </section>
+
+    <section class="catalogue section-wrap" id="catalogue">
+      <div class="section-heading"><div><p class="eyebrow">LA SÉLECTION XYZ</p><h2>NOTRE CATALOGUE</h2></div><p>Des essentiels fonctionnels pour vos sorties et activités.</p></div>
+      <div class="category-tabs" id="category-tabs">
+        <button class="category-tab active" data-category="all">TOUT VOIR <span>19</span></button>
+        <button class="category-tab" data-category="clothing">VÊTEMENTS & TENUES <span>6</span></button>
+        <button class="category-tab" data-category="protection">PROTECTION & ACCESSOIRES <span>10</span></button>
+        <button class="category-tab" data-category="outdoor">RANDONNÉE & SURVIE <span>3</span></button>
+      </div>
+      <div class="catalogue-toolbar"><span id="product-count">19 articles</span><label class="search-box">⌕ <input id="search-input" type="search" placeholder="Rechercher un article..."></label></div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="about section-wrap" id="about"><div class="about-number">XYZ<br>TACTICAL</div><div><p class="eyebrow">NOTRE PHILOSOPHIE</p><h2>FONCTIONNALITÉ.<br><em>FIABILITÉ. LIBERTÉ.</em></h2><p>XYZ TACTICAL rassemble des articles sélectionnés pour accompagner les passionnés d'activités outdoor, de randonnée et de vie active. Remplacez les textes et visuels de démonstration par vos propres contenus.</p></div></section>
+  </main>
+
+  <div class="trust-strip"><div class="trust-item">SÉLECTION SOIGNÉE<small>Articles outdoor</small></div><div class="trust-item">SERVICE CLIENT<small>À votre écoute</small></div><div class="trust-item">INFORMATIONS CLAIRES<small>Fiches détaillées</small></div><div class="trust-item">EXPÉRIENCE SIMPLE<small>Navigation responsive</small></div></div><footer><a class="brand footer-brand" href="#"><span class="brand-mark">X</span><span>XYZ <b>TACTICAL</b><small>OUTDOOR EQUIPMENT</small></span></a><p>© <span id="year"></span> XYZ TACTICAL. Démonstration de boutique.</p><a href="#catalogue">Retour au catalogue ↑</a></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Panier">
+    <div class="drawer-head"><div><p class="eyebrow">VOTRE SÉLECTION</p><h2>MON PANIER</h2></div><button class="icon-button" id="close-cart" aria-label="Fermer">✕</button></div>
+    <div class="cart-layout">
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-summary">
+        <h3>RÉSUMÉ</h3>
+        <div class="summary-line"><span>Articles</span><strong id="cart-count-summary">0</strong></div>
+        <div class="summary-line"><span>Sous-total</span><strong>À renseigner</strong></div>
+        <div class="summary-line"><span>Livraison</span><strong>À confirmer</strong></div>
+        <div class="summary-line summary-total"><span>Total</span><strong id="cart-total">À déterminer</strong></div>
+        <button class="button button-dark" id="checkout-button">CONTINUER ↗</button>
+        <small>Maquette pédagogique : aucune vente ni transaction réelle n'est réalisée.</small>
+      </div>
+    </div>
+  </aside>
+
+  <div class="modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+    <button class="icon-button modal-close" id="close-modal" aria-label="Fermer">✕</button>
+    <p class="eyebrow">DERNIÈRE ÉTAPE</p><h2 id="checkout-title">RÉCAPITULATIF</h2>
+    <div id="checkout-summary" class="checkout-summary"></div>
+    <div class="demo-instructions"><strong>ÉTAPE DE PAIEMENT — SIMULATION</strong><p>Zone réservée à une explication fictive du parcours de paiement pour l'exercice. Aucun portefeuille, adresse BTC, QR code ou transfert de cryptomonnaie n'est activé dans cette maquette.</p></div>
+    <button class="button button-dark full-width" id="telegram-button">COPIER LE RÉCAPITULATIF ET OUVRIR TELEGRAM ↗</button>
+    <p class="copy-feedback" id="copy-feedback" aria-live="polite"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
